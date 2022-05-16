@@ -5,6 +5,11 @@
 ### V1
 Create an app that fetch the backend for users and display them to the user
 
+### V2
+add a user form to create a user on the backend,
+fetch all users, 
+delete user.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
 
