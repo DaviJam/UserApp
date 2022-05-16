@@ -1,5 +1,11 @@
 # UserApp
 
+
+## Release
+### V1
+Create an app that fetch the backend for users and display them to the user
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
 
 ## Development server
