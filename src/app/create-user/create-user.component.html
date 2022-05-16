@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <a class="nav-link" (click)="backToList()">Back to list</a>
+  <div class="col-sm-8 col-sm-offset-2">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="" id="username" formControlName="username">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="" id="email" formControlName="email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="" id="password" formControlName="password">
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">Create</button>
+    </form>
+  </div>
+</div>

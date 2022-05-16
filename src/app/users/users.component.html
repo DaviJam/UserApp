@@ -1,6 +1,8 @@
 <ul class="list-group">
   <app-user *ngFor="let _user of users"
-  [user]="_user">
+  [user]="_user"
+  (deleted)="onDeleted(_user.email)">
   </app-user>
+  <button class="btn btn-success my-2" style="width:100px" (click)=onCreate()>Ajouter</button>
 </ul>
 

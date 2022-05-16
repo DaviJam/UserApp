@@ -7,5 +7,5 @@ interface ServerConfig {
 export const serverCustomerConfig : ServerConfig = {
   url: 'localhost',
   port: 9999,
-  path: 'customer-service/api/v1/customers'
+  path: 'user-service/api/v1'
  };

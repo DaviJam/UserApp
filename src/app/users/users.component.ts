@@ -1,6 +1,7 @@
+import { Router } from '@angular/router';
 import { UserService } from '../service/user.service';
 import { User } from '../model/user.model';
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -14,17 +15,26 @@ export class UsersComponent implements OnInit, OnDestroy {
 
   users : User[] | any ;
 
-  constructor(private userService : UserService) { }
+  constructor(private userService : UserService, private router : Router) {
+
+   }
 
   ngOnInit(): void {
-    this.usersSub = this.userService.getUsers().subscribe({
+    this.usersSub = this.userService.userSub.subscribe({
       next: (response) => { this.users=response; },
       error: (error) => { console.log(error); }
     });
+    this.userService.getUsers();
   }
 
   ngOnDestroy(): void {
     this.usersSub.unsubscribe();
   }
 
+  onDeleted(email : String){
+    this.userService.removeUser(email);
+  }
+  onCreate(){
+    this.router.navigate(["users/add"]);
+  }
 }
